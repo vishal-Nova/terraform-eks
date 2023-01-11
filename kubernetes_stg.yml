@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: stgweb
+  name: stgweb
+  namespace: default
+spec:
+  replicas: 2
+  minReadySeconds: 45
+  selector:
+    matchLabels:
+      app: stgweb
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: stgweb
+    spec:
+      containers:
+      - image: (url-registry):stgweb:3.2
+        imagePullPolicy: Always
+        name: stgweb
+      imagePullSecrets:
+        - name: dockersecret
+      restartPolicy: Always
+
+      terminationGracePeriodSeconds: 30
+
+
+
+
+
+
