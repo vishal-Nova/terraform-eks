@@ -2,7 +2,7 @@
 ## This Repo are use to create eks with auto scaling.
 ### Here's a breakdown of the code:
 
-***Retrieves information about an existing EKS cluster using the aws_eks_cluster data source.
+***Retrieves information about an existing EKS cluster using the aws_eks_cluster data source.***
 
 Retrieves the Kubernetes Configuration File (kubeconfig) for the EKS cluster using the aws_eks_cluster_auth data source.
 
